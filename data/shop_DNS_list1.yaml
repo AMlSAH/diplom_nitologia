@@ -1,0 +1,26 @@
+- shop: Магазин 1
+  url: http://shop_DNS_list1.ru
+  categories:
+    - id: 1
+      name: Электроника
+      parent: null
+    - id: 2
+      name: Ноутбуки
+      parent: 1
+  goods:
+    - id: 1001
+      category: 2
+      name: "Ноутбук Байкал"
+      price: 59000
+      quantity: 10
+      parameters:
+        RAM: "8 ГБ"
+        HDD: "512 SSD"
+    - id: 1002
+      category: 2
+      name: "Ноутбук MSI"
+      price: 90000
+      quantity: 5
+      parameters:
+        RAM: "16 ГБ"
+        HDD: "1 ТБ SSD"
