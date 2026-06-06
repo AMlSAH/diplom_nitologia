@@ -1,0 +1,25 @@
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная</title>
+</head>
+<body>
+    <nav>
+        <a href="{% url 'index' %}">Главная</a>
+        {% if user.is_authenticated %}
+            <span>Привет, {{ user.full_name|default:user.username }}!</span>
+            <a href="{% url 'logout' %}">Выйти</a>
+        {% else %}
+            <a href="{% url 'login' %}">Войти</a>
+            <a href="{% url 'register_view' %}">Регистрация</a>
+        {% endif %}
+    </nav>
+    <hr>
+    <h1>Добро пожаловать</h1>
+    {% if user.is_authenticated %}
+        <p>Вы вошли как {{ user.username }}. Ваш телефон: {{ user.phone }}.</p>
+    {% else %}
+        <p> Пожалуйста, войдите или зарегистрируйтесь</p>
+    {% endif %}
+</body>
+</html>
